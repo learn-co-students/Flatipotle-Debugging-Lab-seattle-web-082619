@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-const ProteinForm = () => {
+const ProteinForm = (props) => {
   return (
     <Fragment>
       <h1><label htmlFor="protein">Protein</label></h1>
@@ -35,7 +35,7 @@ const ProteinForm = () => {
           </div>
         </div>
 
-        <div className="field">
+        <div className="field" onChange={ props.handleChange }>
           <div className="ui checkbox">
             <input
               id="chicken"
@@ -43,7 +43,6 @@ const ProteinForm = () => {
               value="Chicken"
               name="protein"
               checked={ props.protein.includes('Chicken') }
-              onChange={ props.handleChange }
             />
             <img src={ require('../images/protein/chicken.png') } height="100px" width="100px" alt="chicken" />
             <label htmlFor="chicken">Chicken</label>
